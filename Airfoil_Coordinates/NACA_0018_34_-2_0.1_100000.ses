@@ -1,0 +1,14 @@
+load C:\Users\risho\OneDrive\Documents\University\Dissertation\Airfoil_Coordinates\NACA_0018.dat
+ppar
+n 180
+
+
+oper
+mach 0.1
+visc 100000
+alfa -2
+dump C:\Users\risho\OneDrive\Documents\University\Dissertation\Airfoil_Coordinates\NACA_0018_34_-2_0.1_100000.res
+mach 0.0
+visc
+
+quit
