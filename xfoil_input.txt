@@ -1,0 +1,16 @@
+LOAD Airfoil_Coordinatestest\a18.dat
+PANE
+OPER
+Iter
+5000
+VISC
+500000
+MACH
+0.2
+PACC
+results/\a18.txt
+
+ASEQ -5 15 1
+PACC OFF
+
+QUIT

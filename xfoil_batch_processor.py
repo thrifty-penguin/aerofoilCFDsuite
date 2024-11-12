@@ -9,7 +9,7 @@ def run_xfoil(aerofoil, output_file):
         f.write("PANE\n")
         f.write("OPER\n")
         f.write("Iter\n")
-        f.write('100\n')
+        f.write('5000\n')
         f.write("VISC\n")
         f.write("500000\n")
         f.write("MACH\n")
@@ -27,8 +27,12 @@ def run_xfoil(aerofoil, output_file):
         print("XFOIL failed to run:", e)
     os.remove(input_filename)
 
-aerofoil = 'Airfoil_Coordinates/a18sm.dat'
-quest=aerofoil.lstrip('Airfoil_Coordinate')
-tion=quest.rstrip('.dat')
-output_file = f"{tion}.txt"
-run_xfoil(aerofoil, output_file)
+folder_path = "Airfoil_Coordinatestest"
+for filename in os.listdir(folder_path):
+    aerofoil = os.path.join(folder_path, filename)
+    #aerofoil = 'Airfoil_Coordinates/a18sm.dat'
+    if os.path.isfile(aerofoil):
+        quest=aerofoil.lstrip('Airfoil_Coordinatestest/')
+        tion=quest.rstrip('.dat')
+        output_file = f"results/{tion}.txt"
+        run_xfoil(aerofoil, output_file)
